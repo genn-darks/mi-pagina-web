@@ -1,0 +1,483 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, 
+initial-scale=1" />
+    <title>PÁGINA ROSA DE GXNN</title>
+    <style>
+        /* caja bienvenidos a mi pagina web*/
+        * {
+            box-sizing: border-box; /* tamaño de caja*/
+            margin: 0; padding: 0;  /* margen y relleno*/
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 
+sans-serif; /* Tipo de letra*/
+        }
+        body {
+            background-color: mistyrose; /* color de fondo de la 
+pagina*/
+            color: rgb(192, 112, 216); /* color de los titulos 
+de imagenes */
+            line-height: 1.6; /* altura de la linea(terror) */
+            min-height: 100vh; /* altura de la panatalla del 
+navegador*/
+            display: flex; /*camabia la dforma en la que se 
+colocan los elemnetos dentro del cuerpo*/
+            flex-direction: column; /* indican wque los elemntos 
+se coloquen de arriba hacia abajo*/
+        }
+        a {
+            color: rgb(236, 53, 141); 
+            text-decoration: none; /*elimina el subrayado que 
+tienen los enlaces por defecto*/
+            transition: color 0.3s ease; /*suaviza el cambio del 
+color cuando se pasa el mouse*/
+        }
+        a:hover {
+            color: rgb(188, 177, 187); /*boton descubrir mas*/
+        }
+
+        /* Navbar barra de navegacion */
+        .navbar {
+            display: flex; /* organiza elemntos dentro de la 
+navegacion*/
+            justify-content: space-between;/*coloca los elementos 
+uno a la izquierda y otro a la derecha*/
+            align-items: center;/* alinea al centro*/
+            background: rgb(245, 222, 226); /* color de barra de 
+navegacion terror*/
+            padding: 1rem 2rem;/* agrega espacio interno*/
+            box-shadow: 0 2px 5px rgba(209, 35, 122, 0.7);/*le 
+da sombra abajo de la barra de terror*/
+            position: sticky;/*hace que la barra se quede pegada*/
+            top: 0;/*define qwue se pegue exactamente en la parte 
+superiror*/
+            z-index: 1000;/*asegura que este por encima de otros 
+elementos*/
+        }
+        .logo {
+            font-size: 1.6rem;/*hace el texto mas grande terror*/
+            font-weight: 700;/*pone el texto en negrita*/
+            color: mediumvioletred;/*color del texto*/
+            letter-spacing: 2px;/*espacio entre letras*/
+            user-select: none;/*impide seleccionar el texto*/
+        }
+        .nav-links {/*contenedor de los enlaces de la barra de 
+navegacion*/
+            list-style: none;/*elimina los puntos o viñetas que 
+vienen por defecto*/
+            display: flex;/*organiza los elementos uno a lado de 
+otro*/
+            gap: 2rem;/* establece un espacio entre cada enlace*/
+        }
+        .nav-links li a {/*aplica el enlace dentro de cada 
+elemneto de lista*/
+            font-weight: 600;/*ancho de la letra*/
+            font-size: 1rem;/*tamaño de la letra*/
+            padding: 0.2rem 0.4rem;/*espacio entre palabras*/
+            color: deeppink; /*color de la letra*/
+        }
+        .nav-links li a:hover {
+            color: rgb(215, 122, 169);/*sombreado de la palabra*/
+        }
+
+        /* Burger button */ /*boton hambruguesa de la barra de 
+navegacion*/
+        .burger {
+            display: none;/*el boton esta oculto por defecto*/ 
+            flex-direction: column;/*las organiza una encima de 
+la otra*/
+            cursor: pointer;
+            gap: 5px;/*separa las lineas entre si*/
+        }
+        .burger span {/*sefine las lineas que forman icono del 
+menu*/
+            width: 25px;/*ancho de cada linea*/
+            height: 3px;/*grosor de cada linea*/
+            background: rgb(228, 18, 119);/*color */
+            border-radius: 2px;/*bordes redondeados*/
+        }
+
+        /* bienvinidos a mi pagina web*/
+        .hero-section {
+            background: linear-gradient(135deg, rgb(211, 69, 
+150), hotpink);
+            text-align: center;
+            padding: 6rem 2rem;
+            color: rgb(237, 228, 234);
+            box-shadow: inset 0 0 100px rgba(213, 151, 213, 0.
+53);
+        }
+        .hero-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 6px rgba(119, 21, 199, 0.7);
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        .btn-primary {/*decubir mas*/
+            padding: 0.8rem 2rem;
+            background-color: rgb(239, 143, 191);
+            border: none; /*elimina el borde del boton*/
+            border-radius: 25px;/*redondea los bordes del boton*/
+            font-size: 1rem;/*tamaño del texto estandar*/
+            color: rgb(197, 24, 159);/*color del texto del 
+boton*/
+            font-weight: bold;/*texto en negrita*/
+            cursor: pointer;/*cambia el cursor a mano cuano pasas 
+el mouse*/
+            transition: background-color 0.3s ease;/*hace que el 
+cambio del fonfo sea suave*/
+            box-shadow: 0 4px 8px rgba(255, 105, 180, 0.7);/
+*aplica sombra debajo del boton*/
+            text-transform: uppercase;/*letra en mayuscula*/
+        }
+        .btn-primary:hover {
+            background-color: deeppink;/*cambia el color del 
+fondo del boton*/
+        }
+
+        /* contenedor de tarjetas */
+        .cards-container {
+            padding: 4rem 2rem; /*agrega espacio interno*/
+            background: mistyrose; /*fonfo rosa claro*/
+            flex-grow: 1; /*permite que ocupe todo el espacio 
+dicponible*/
+        }
+        .cards-container h2 { /*titulo dentro del contenedor*/
+            font-size: 2rem; /*hace el titulo mas grande*/
+            text-align: center; /*centra el  texto 
+horizontalmente*/
+            margin-bottom: 2rem;/*deja espacio debajo del titulo*/
+            color: mediumvioletred;/*tono rosado fuerte como el 
+boton*/
+            text-shadow: 1px 1px 4px rgba(255, 182, 193, 0.7);/
+*agrega una sombra suave al texto*/
+        }
+        .cards {/*rejilla de tarjetas*/
+            display: grid; /*activa el modelo de rejilla*/
+            grid-template-columns: repeat(auto-fit,minmax(280px,
+1fr)); /*crea columnas automaticas*/
+            gap: 1.8rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: lavenderblush;/*fondo de color rosado*/
+            padding: 1.5rem;/*espacio interno entre el borde del 
+elemento y su contenido*/
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 182, 193, 0.67);/
+*aplica una sombre alrededor del elemento*/
+            transition: transform 0.3s ease, box-shadow 0.3s 
+ease;/*aplica animacion suave cuando cambian*/
+            display: flex; /* lo convierte en u contenedor 
+flexible*/
+            flex-direction: column; /*los organiza uno debajo del 
+otro*/
+            align-items: center;/*los centra horizontalmente*/
+            text-align: center;/*centra el texto dentro del 
+elemento*/
+        }
+        .card:hover {
+            transform: translateY(-10px); /*mueve el elemnto 
+hacia arriba al pasar el mouse*/
+            box-shadow: 0 8px 15px rgb(220, 24, 122); /*cambia 
+el color de la sombra*/
+        }
+        .card h3 {
+            margin: 1rem 0 0,8rem;/*margen alrededor del h3*/
+            color: rgb(245, 146, 194);/*cambia el color del 
+texto*/
+        }
+        .card p {
+            font-size: 0.95rem; /*tamaño de la letra*/
+            color: rgb(224, 118, 153); /*color del texto*/
+        }
+        .card img { /*imagenes*/
+            width: 100%; /*ancho de la imagen*/
+            max-width: 260px; /*ancho maximo permitido*/
+            border-radius: 6px; /*esquinas redondas*/
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /*sombra 
+oscura y suave*/
+            object-fit: cover;/*se corta la imagen sin 
+deformarse*/
+            aspect-ratio: 16 / 9;/*ancho y alto d tipo de 
+pantalla*/
+            margin-bottom: 1rem;/*deja espacio debajo de la 
+imagen*/
+            user-select: none;/*el usuario no podra seleccionar 
+la imagen con el mouse*/
+            border: 2px solid pink;/*borde rosa*/
+        }
+
+        /* seccion de contacto */
+        .contact-section {
+            padding: 3rem 2rem;/*espaciado interno*/
+            background: rgb(248, 233, 238);
+            max-width: 600px; /*ancho*/
+            margin: 2rem auto; /*margen de arriba y abajo y 
+centrado horizontal*/
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 182, 193, 0.67);/
+*sombra rosa suave alrededor del contendeor*/
+        }
+        .contact-section h2 { /*estilo de titulo*/
+            text-align: center;
+            margin-bottom: 1.5rem; /*espacio denajo del titulo*/
+            color: rgb(218, 96, 137); 
+        }
+        #contact-form input,
+        #contact-form textarea {
+            width: 100%; /*campos que utilizan todo el ancho 
+disponible*/
+            padding: 0.8rem; /*espacio interno*/
+            margin-bottom: 1.2rem; /*espacio debajo del campo*/
+            border: 1px solid rgb(255, 192, 232);/*borde del 
+campo*/
+            border-radius: 5px;
+            background: rgb(244, 224, 224); /*fondo del campo*/
+            color: palevioletred;
+            font-size: 1rem;
+            resize: vertical; 
+            font-family: inherit;
+        }
+        #contact-form input::placeholder,/*texto que aparece 
+antes de escribir*/
+        #contact-form textarea::placeholder {
+            color: rgb(169, 13, 39);
+        }
+        #contact-form button {
+            background: hotpink;
+            border: none;
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+        }
+        #contact-form button:hover {
+            background-color: deeppink;
+        }
+
+        /* Flash messages */
+        .flash-messages {
+            max-width: 600px;
+            margin: 1rem auto;
+            padding: 1rem;
+            background: pink;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            display: none; /* Initially hidden */
+        }
+
+        /* About section */
+        .about-section {
+            max-width: 800px;
+            margin: 3rem auto 5rem;
+            padding: 0 1rem;
+            color: palevioletred;
+            text-align: center;
+        }
+        .about-section h2 {
+            color: mediumvioletred;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: palevioletred;
+            color: lavenderblush;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            font-size: 0.9rem;
+            border-top: 1px solid hotpink;
+            user-select: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: pink;
+                width: 200px;
+                flex-direction: column;
+                padding: 1rem;
+                border-radius: 0 0 0 8px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .burger {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">TERROR</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">INICIO</a></li>
+            <li><a href="#servicios">SERVICIOS</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+            <li><a href="#acerca">ACERCA DE VIDEOJUEGOS</a></li>
+        </ul>
+        <button class="burger" aria-label="Toggle menu" 
+aria-expanded="false"> 
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <header id="inicio" class="hero-section">
+        <h2>BIENVENIDOS A MI PAGINA WEB</h2>
+        <p>Descubre más sobre tus videojuegos favoritos</p>
+        <a href="#servicios" class="btn-primary">Descubrir más</a>
+    </header> 
+
+    <main>
+        <section id="servicios" class="cards-container">
+            <h2>Nuestros juegos</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="C:\Users\gennl\Downloads\WhatsApp 
+Image 2025-06-20 at 8.27.53 PM.jpeg  " 
+alt="Silent Hill 2" />
+                    <h3>Juego 1</h3>
+                    <p>SILENT HILL 2</p>
+                    <p>Un referente del género de terror 
+psicológico, la historia de James Sunderland 
+y su búsqueda de su esposa es profunda
+                     simbólica y perturbadora.</p>
+                </div>
+                <div class="card">
+                    <img src="C:\User\gennl\Downloads\WhatsApp 
+image 2025-06-20 at 8.36.32 PM.jpeg  " 
+alt="Fatal Frame II: Crismon Butter cover"/>
+                    <h3>Fatal Frame II: Crismon Butterfly </h3>
+                    <p>Usas cámaras para capturar fantasmas,
+destaca por su atmósfera tensa y narrativa 
+melancólica. </p>
+                </div>
+                <div class="card">
+                    <img src="C:\Users\gennl\Downloads\WhatsApp 
+Image 2025-06-20 at 8.31.52 PM.jpeg " 
+alt="Rule of Rose" />
+                    <h3>Rule of Rose</h3>
+                    <p>Muy controvertido por su temática 
+psicológica y oscura, se centra en la mente 
+de una niña en un entorno perturbador.<
+                </div>
+                <div class="card">
+                    <img src=" C:\Users\gennl\Downloads\WhatsApp 
+Image 2025-06-20 at 8.39.26 PM.jpeg " 
+alt="Haunting Ground cover" />
+                    <h3>Haunting Ground</h3>
+                    <p>Escapar de un castillo siendo perseguida 
+constantemente crea un estado de ansiedad, 
+influenciado por Clock Tower.</p>
+                </div>
+                <div class="card">
+                    <img src="C:\Users\gennl\Downloads\imagenes 
+de mi pagina webbb\WhatsApp Image 2025-06-20 
+at 8.41.50 PM.jpeg "
+                    alt="Amnesia: The dark descent" />
+                    <h3>Amnesia: The Dark Descent</h3>
+                    <p>Perder la cordura mientras exploras 
+oscuros pasillos crea una experiencia 
+verdaderamente aterradora. </p>
+                </div>
+            </div>  
+        </section>  
+
+        <section id="contacto" class="contact-section">
+            <h2>Contacto</h2>
+            <form id="contact-form">
+                <input type="email" name="correo" 
+placeholder="correo electrónico" required />
+                <textarea name="mensaje" placeholder="mensaje" 
+required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <div id="flash-messages" class="flash-messages"></div> 
+        
+        <section id="acerca" class="about-section">
+            <h2>Acerca de los juegos</h2>
+            <p>Los videojuegos de terror psicológico son un 
+subgénero del horror que se enfoca en provocar miedo 
+a través de emociones y el 
+entorno psicológico del jugador, más que los sustos tradicionales.
+</p>
+            <h2>Características principales</h2>
+            <p>° Suelen tener personajes con culpa, traumas, 
+alucinaciones o pérdida de la cordura.</p>
+            <p>° El jugador a veces no puede distinguir la 
+realidad y lo imaginario.</p>
+            <p>° Lugares oscuros, vacíos, abandonados o cargados 
+de simbolismo.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></
+script>
+    <script>
+        (function(){
+            emailjs.init('Gmail');
+        })();
+
+        // Script para el menú responsivo burger
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const expanded = burger.getAttribute('aria-expanded') 
+=== 'true';
+            burger.setAttribute('aria-expanded', !expanded);
+        });
+
+        const form = document.getElementById('contact-form');
+        const flashMessages = document.getElementById
+('flash-messages');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Simulación de envío (reemplaza con tu código real)
+            setTimeout(() => {
+                flashMessages.textContent = 'Mensaje enviado 
+correctamente!';
+                flashMessages.style.display = 'block';
+                flashMessages.style.backgroundColor = 
+'palevioletred';
+                setTimeout(() => {
+                    flashMessages.style.display = 'none';
+                }, 4000);
+                form.reset();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
